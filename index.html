@@ -104,7 +104,7 @@
   <a class="whatsapp" href="https://wa.me/YOURWHATSAPPNUMBER?text=Hi%20UF%20Developer%2C%20I%20am%20interested%20in%20getting%20a%20website%20for%20my%20business." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">⌕<span>Chat on WhatsApp</span></a><a class="mobile-cta" href="#contact">💬 &nbsp;Start your project</a>
   <dialog id="case-study"><button class="modal-close" aria-label="Close case study">×</button><p class="eyebrow">Concept project</p><h2></h2><p class="modal-category"></p><div class="modal-grid"><div><h3>The challenge</h3><p>To create a clear, credible online experience that helps a growing business make a strong first impression.</p></div><div><h3>The solution</h3><p>A purposeful visual system, responsive content structure and clear next steps for visitors.</p></div><div><h3>Key features</h3><p>Mobile-first layouts, intuitive navigation, thoughtful calls to action and fast, accessible interfaces.</p></div><div><h3>Outcome</h3><p>Designed as a demonstration of UF Developer’s web-development capabilities.</p></div></div><a class="button" href="#contact">Discuss a similar project <i>→</i></a></dialog>
   <script>const $ = (s, p = document) => p.querySelector(s);
-const $ = (s, p = document) => [...p.querySelectorAll(s)];
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 
 window.addEventListener('load', () => setTimeout(() => $('.loader').classList.add('done'), 650));
 
@@ -115,7 +115,7 @@ $('.menu-toggle')?.addEventListener('click', () => {
   const open = header.classList.toggle('menu-open');
   $('.menu-toggle').setAttribute('aria-expanded', open);
 });
-$('nav a').forEach(a => a.addEventListener('click', () => header?.classList.remove('menu-open')));
+$$('nav a').forEach(a => a.addEventListener('click', () => header?.classList.remove('menu-open')));
 
 $('.theme-toggle')?.addEventListener('click', () => {
   document.body.classList.toggle('light');
@@ -123,17 +123,17 @@ $('.theme-toggle')?.addEventListener('click', () => {
 });
 
 const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:.12});
-$('.reveal').forEach(el => observer.observe(el));
+$$('.reveal').forEach(el => observer.observe(el));
 
-$('.filters button').forEach(button => button.addEventListener('click', () => {
-  $('.filters button').forEach(b => b.classList.remove('active')); button.classList.add('active');
+$$('.filters button').forEach(button => button.addEventListener('click', () => {
+  $$('.filters button').forEach(b => b.classList.remove('active')); button.classList.add('active');
   const filter = button.dataset.filter;
-  $('.project').forEach(project => { project.classList.toggle('hidden', filter !== 'all' && !project.dataset.category.includes(filter)); });
+  $$('.project').forEach(project => { project.classList.toggle('hidden', filter !== 'all' && !project.dataset.category.includes(filter)); });
 }));
 
 const modal = $('#case-study');
 const categories = {'Bake House Karachi':'Bakery / Food','EstateX Pakistan':'Real Estate','Café 92':'Restaurant','FitCore':'Fitness / Business','AURA':'Fashion / E-commerce','Personal Brand':'Creator / Professional'};
-$('.project-open').forEach(button => button.addEventListener('click', () => { if (!modal) return; const name = button.dataset.project; $('h2', modal).textContent = name; $('.modal-category', modal).textContent = categories[name]; modal.showModal(); }));
+$$('.project-open').forEach(button => button.addEventListener('click', () => { if (!modal) return; const name = button.dataset.project; $('h2', modal).textContent = name; $('.modal-category', modal).textContent = categories[name]; modal.showModal(); }));
 $('.modal-close')?.addEventListener('click', () => modal.close());
 modal?.addEventListener('click', e => { if(e.target === modal) modal.close(); });
 
