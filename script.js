@@ -11,18 +11,63 @@ const contactConfig = {
   email: "umerfarooq3573@gmail.com"
 };
 
-/* Email links */
+/* Update email links */
 $$('a[href^="mailto:"]').forEach((link) => {
   link.href = `mailto:${contactConfig.email}`;
   link.textContent = `✉  ${contactConfig.email}`;
 });
 
-/* WhatsApp links */
+/* Update WhatsApp links */
 $$('a[href*="wa.me"]').forEach((link) => {
   link.href =
     `https://wa.me/${contactConfig.phone}` +
     `?text=Hi%20UF%20Developer%2C%20I%20am%20interested%20in%20getting%20a%20website%20for%20my%20business.`;
 });
+
+/* Services page index */
+if (location.pathname.toLowerCase().endsWith("services.html")) {
+  const serviceSection = $(".service-detail-list");
+
+  if (serviceSection) {
+    const index = document.createElement("div");
+
+    index.className = "service-index";
+
+    index.innerHTML = `
+      <a href="#service-01">
+        <span>01</span>
+        Business websites
+        <b>↘</b>
+      </a>
+
+      <a href="#service-02">
+        <span>02</span>
+        Landing pages
+        <b>↘</b>
+      </a>
+
+      <a href="#service-03">
+        <span>03</span>
+        E-commerce
+        <b>↘</b>
+      </a>
+
+      <a href="#service-04">
+        <span>04</span>
+        Redesign & custom
+        <b>↘</b>
+      </a>
+    `;
+
+    serviceSection.parentNode.insertBefore(index, serviceSection);
+
+    serviceSection
+      .querySelectorAll("article")
+      .forEach((article, indexNumber) => {
+        article.id = `service-0${indexNumber + 1}`;
+      });
+  }
+}
 
 /* Loader */
 window.addEventListener("load", () => {
@@ -54,7 +99,11 @@ const menuToggle = $(".menu-toggle");
 if (menuToggle && header) {
   menuToggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("menu-open");
-    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
   });
 }
 
@@ -73,13 +122,14 @@ if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("light");
 
-    themeToggle.textContent = document.body.classList.contains("light")
-      ? "☾"
-      : "☼";
+    themeToggle.textContent =
+      document.body.classList.contains("light")
+        ? "☾"
+        : "☼";
   });
 }
 
-/* Scroll reveal animations */
+/* Scroll reveal */
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -92,7 +142,9 @@ if ("IntersectionObserver" in window) {
     { threshold: 0.12 }
   );
 
-  $$(".reveal").forEach((element) => observer.observe(element));
+  $$(".reveal").forEach((element) => {
+    observer.observe(element);
+  });
 } else {
   $$(".reveal").forEach((element) => {
     element.classList.add("visible");
@@ -102,9 +154,9 @@ if ("IntersectionObserver" in window) {
 /* Portfolio filters */
 $$(".filters button").forEach((button) => {
   button.addEventListener("click", () => {
-    $$(".filters button").forEach((item) =>
-      item.classList.remove("active")
-    );
+    $$(".filters button").forEach((item) => {
+      item.classList.remove("active");
+    });
 
     button.classList.add("active");
 
@@ -112,15 +164,17 @@ $$(".filters button").forEach((button) => {
 
     $$(".project").forEach((project) => {
       const categories = project.dataset.category || "";
+
       const shouldHide =
-        filter !== "all" && !categories.includes(filter);
+        filter !== "all" &&
+        !categories.includes(filter);
 
       project.classList.toggle("hidden", shouldHide);
     });
   });
 });
 
-/* Case study modal */
+/* Case-study modal */
 const modal = $("#case-study");
 
 const projectCategories = {
@@ -140,7 +194,10 @@ $$(".project-open").forEach((button) => {
     const title = $("h2", modal);
     const category = $(".modal-category", modal);
 
-    if (title) title.textContent = projectName;
+    if (title) {
+      title.textContent = projectName;
+    }
+
     if (category) {
       category.textContent =
         projectCategories[projectName] || "Concept Project";
@@ -155,7 +212,9 @@ $$(".project-open").forEach((button) => {
 const modalClose = $(".modal-close");
 
 if (modal && modalClose) {
-  modalClose.addEventListener("click", () => modal.close());
+  modalClose.addEventListener("click", () => {
+    modal.close();
+  });
 
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
@@ -164,7 +223,7 @@ if (modal && modalClose) {
   });
 }
 
-/* Before / after comparison slider */
+/* Before/after comparison slider */
 const comparison = $("#comparison");
 const oldVersion = $(".comparison-old");
 const comparisonHandle = $(".compare-handle");
@@ -175,11 +234,15 @@ if (comparison && oldVersion && comparisonHandle) {
 
     const percentage = Math.max(
       5,
-      Math.min(95, ((clientX - rect.left) / rect.width) * 100)
+      Math.min(
+        95,
+        ((clientX - rect.left) / rect.width) * 100
+      )
     );
 
     oldVersion.style.width = `${percentage}%`;
     comparisonHandle.style.left = `${percentage}%`;
+
     comparisonHandle.setAttribute(
       "aria-valuenow",
       Math.round(percentage)
@@ -188,38 +251,62 @@ if (comparison && oldVersion && comparisonHandle) {
 
   let dragging = false;
 
-  comparisonHandle.addEventListener("pointerdown", (event) => {
-    dragging = true;
-    comparisonHandle.setPointerCapture(event.pointerId);
-  });
-
-  comparison.addEventListener("pointermove", (event) => {
-    if (dragging) {
-      setComparison(event.clientX);
+  comparisonHandle.addEventListener(
+    "pointerdown",
+    (event) => {
+      dragging = true;
+      comparisonHandle.setPointerCapture(event.pointerId);
     }
-  });
+  );
+
+  comparison.addEventListener(
+    "pointermove",
+    (event) => {
+      if (dragging) {
+        setComparison(event.clientX);
+      }
+    }
+  );
 
   window.addEventListener("pointerup", () => {
     dragging = false;
   });
 
-  comparisonHandle.addEventListener("keydown", (event) => {
-    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+  comparisonHandle.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key !== "ArrowLeft" &&
+        event.key !== "ArrowRight"
+      ) {
+        return;
+      }
 
-    event.preventDefault();
+      event.preventDefault();
 
-    const rect = comparison.getBoundingClientRect();
-    const currentValue =
-      Number(comparisonHandle.getAttribute("aria-valuenow")) || 48;
+      const rect = comparison.getBoundingClientRect();
 
-    const change = event.key === "ArrowLeft" ? -5 : 5;
-    const nextValue = Math.max(5, Math.min(95, currentValue + change));
+      const currentValue =
+        Number(
+          comparisonHandle.getAttribute("aria-valuenow")
+        ) || 48;
 
-    setComparison(rect.left + rect.width * (nextValue / 100));
-  });
+      const change =
+        event.key === "ArrowLeft" ? -5 : 5;
+
+      const nextValue = Math.max(
+        5,
+        Math.min(95, currentValue + change)
+      );
+
+      setComparison(
+        rect.left + rect.width * (nextValue / 100)
+      );
+    }
+  );
 }
 
-/* Project form */
+/* Contact form */
 const projectForm = $("#project-form");
 
 if (projectForm) {
