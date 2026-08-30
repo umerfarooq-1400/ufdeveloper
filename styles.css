@@ -1,203 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UF Developer - Web Development & Design</title>
-  <style>
-    :root{--bg:#0b0d0f;--panel:#121518;--text:#f5f7f6;--muted:#9ca6a1;--line:#29302d;--green:#16a34a;--soft:#dcfce7;--serif:Georgia,serif}
-    *{box-sizing:border-box}
-    html,body{overflow-x:hidden;width:100%;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:Manrope,Arial,sans-serif}
+@media (max-width: 700px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
-    .site-header{position:fixed;z-index:20;top:10px;left:50%;width:calc(100% - 20px);max-width:1280px;transform:translateX(-50%);padding:10px 14px;border:1px solid var(--line);background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(18px);border-radius:12px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none}
-    .brand b{font-size:1.2rem;letter-spacing:-.12em}
-    .brand span{font:500 .6rem 'DM Mono';letter-spacing:.18em}
-    .site-header nav{display:none}
-    .nav-actions .button-small{display:none}
-    .menu-toggle{border:0;background:none;color:var(--text);cursor:pointer;display:block;padding:4px}
-    .menu-toggle span{display:block;width:22px;height:2px;background:currentColor;margin:4px 0}
+  .site-header {
+    width: calc(100% - 24px);
+    min-height: 52px;
+    top: 10px;
+    padding: 10px 12px;
+  }
 
-    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:white;text-decoration:none;border-radius:4px;padding:12px 18px;font-size:.8rem;font-weight:700;border:none}
+  .site-header nav {
+    display: none !important;
+  }
 
-    .hero{padding:110px 16px 40px;display:flex;flex-direction:column;gap:30px;position:relative}
-    .availability{font:500 .65rem 'DM Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:8px}
-    .availability span{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px #16a34a20}
-    .hero h1{font-size:clamp(2rem,7.5vw,3.2rem);line-height:1.05;letter-spacing:-.05em;margin:16px 0}
-    .hero h1 em{font-family:var(--serif);font-weight:400;color:var(--green)}
-    .lead{font-size:.9rem;line-height:1.6;color:var(--muted);margin-bottom:16px}
-    .location{font:500 .68rem 'DM Mono';color:var(--muted);margin-bottom:20px}
-    .hero-actions{display:flex;flex-direction:column;gap:12px}
-    .hero-actions .button{width:100%}
-    .text-link{text-align:center;font-size:.8rem;font-weight:700;color:var(--text);text-decoration:none;padding:8px 0}
-    .capabilities{font:500 .65rem 'DM Mono';color:var(--muted);margin-top:20px;line-height:1.8}
+  .site-header.menu-open nav {
+    display: flex !important;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    right: 0;
+    padding: 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-    .hero-visual{width:100%;height:auto}
-    .screen{width:100%;border:4px solid #222a27;border-radius:10px;background:#d9f8e3;overflow:hidden}
-    .browser-top{height:20px;background:#f9faf7;display:flex;align-items:center;padding:0 8px;gap:4px}
-    .browser-top span{width:5px;height:5px;border-radius:50%;background:#a9afaa}
-    .screen-content{padding:16px;color:#133a20;background:linear-gradient(135deg,#ecfff2,#b4eeca)}
-    .screen-nav{display:flex;justify-content:space-between;font:500 8px 'DM Mono'}
-    .screen-content h3{font-size:24px;letter-spacing:-.05em;margin:20px 0 10px;line-height:1}
+  .site-header nav a {
+    font-size: 0.85rem;
+    padding: 4px 0;
+  }
 
-    .trust{padding:20px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .trust p{font-size:.75rem;color:var(--muted);margin:0 0 12px}
-    .trust div{display:flex;flex-wrap:wrap;gap:8px 14px}
-    .trust span{font:500 .6rem 'DM Mono';color:var(--text)}
+  .theme-toggle {
+    display: block;
+    font-size: 1.25rem;
+    padding: 8px;
+  }
 
-    .section{padding:50px 16px}
-    .eyebrow{font:500 .65rem 'DM Mono';letter-spacing:.12em;color:var(--green);text-transform:uppercase}
-    .section-heading h2{font-size:clamp(1.8rem,6vw,2.6rem);margin:12px 0;letter-spacing:-.04em}
-    .section-heading p{font-size:.85rem;line-height:1.6;color:var(--muted)}
+  .menu-toggle {
+    display: block !important;
+    width: 34px;
+    min-height: 34px;
+    padding: 6px;
+  }
 
-    .service-grid{display:flex;flex-direction:column;gap:16px;margin-top:30px}
-    .service-card{border:1px solid var(--line);background:var(--panel);padding:20px;border-radius:8px}
-    .service-card span{font:500 .65rem 'DM Mono';color:var(--green)}
-    .service-icon{font-size:24px;margin:16px 0 10px;color:var(--green)}
-    .service-card h3{margin:0 0 8px;font-size:1.1rem}
-    .service-card p{font-size:.8rem;line-height:1.6;color:var(--muted);margin:0 0 16px}
-    .service-card a{font-size:.75rem;font-weight:700;color:var(--text);text-decoration:none}
-    .service-card a i{color:var(--green);font-style:normal;margin-left:4px}
+  .menu-toggle span {
+    display: block;
+    height: 2px;
+    margin: 6px 0;
+    background: currentColor;
+  }
 
-    .whatsapp{position:fixed;right:16px;bottom:16px;z-index:30;border-radius:25px;background:var(--green);padding:10px 14px;color:white;text-decoration:none;font-size:.75rem;font-weight:700;box-shadow:0 6px 20px #0006}
+  .hero {
+    width: 100%;
+    min-width: 0;
+    padding: 132px 20px 35px;
+    display: block;
+  }
 
-    @media(min-width:901px){
-      .site-header nav{display:flex;gap:24px}
-      .nav-actions .button-small{display:inline-flex}
-      .menu-toggle{display:none}
-      .hero{display:grid;grid-template-columns:1fr 1fr;padding:160px max(30px,calc((100% - 1220px)/2)) 80px}
-      .hero-actions{flex-direction:row}
-      .hero-actions .button{width:auto}
-      .service-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-    }
-  </style>
-</head>
-<body>
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.3rem, 12vw, 3.2rem);
+    line-height: 1;
+  }
 
-  <header class="site-header">
-    <a href="#" class="brand">
-      <b>UF</b>
-      <span>DEVELOPER</span>
-    </a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a href="#contact" class="button button-small">Let's Talk ↗</a>
-      <button class="menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
+  .hero-copy {
+    width: 100%;
+  }
 
-  <section class="hero" id="home">
-    <div class="hero-copy">
-      <div class="availability">
-        <span></span> AVAILABLE FOR NEW PROJECTS
-      </div>
-      <h1>I build websites that help <em>businesses grow.</em></h1>
-      <p class="lead">Modern, responsive and conversion-focused websites for businesses, brands and entrepreneurs.</p>
-      <div class="location">Based in Pakistan • Working with ambitious businesses</div>
-      <div class="hero-actions">
-        <a href="#contact" class="button">Start a Project ↗</a>
-        <a href="#work" class="text-link">View My Work ↓</a>
-      </div>
-      <div class="capabilities">
-        ✦ Responsive Design &nbsp; ✦ Modern UI &nbsp; ✦ Fast Performance &nbsp; ✦ Mobile First &nbsp; ✦ SEO Ready
-      </div>
-    </div>
+  .hero-visual {
+    width: 100%;
+    max-width: 390px;
+    height: 340px;
+    margin: 30px auto 0;
+    transform: none;
+  }
 
-    <div class="hero-visual">
-      <div class="screen">
-        <div class="browser-top">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="screen-content">
-          <div class="screen-nav">
-            <b>atelier</b>
-            <span>Work Services</span>
-          </div>
-          <h3>Built for the<br>next chapter.</h3>
-        </div>
-      </div>
-    </div>
-  </section>
+  .screen {
+    width: min(78vw, 320px);
+    height: 210px;
+    right: 8%;
+    top: 60px;
+  }
 
-  <div class="trust">
-    <p>Built for businesses that want to be taken seriously online.</p>
-    <div>
-      <span>✦ Responsive Design</span>
-      <span>✦ Modern UI</span>
-      <span>✦ Fast Performance</span>
-      <span>✦ Mobile First</span>
-    </div>
-  </div>
+  .phone {
+    width: 78px;
+    height: 165px;
+    right: 0;
+    bottom: 6px;
+  }
 
-  <section class="section" id="services">
-    <div class="section-heading">
-      <p class="eyebrow">SERVICES / 01</p>
-      <h2>What I can build <em>for you.</em></h2>
-      <p>From a simple business website to a complete online store, I create digital experiences designed around your goals.</p>
-    </div>
+  .card-design {
+    left: 0;
+    top: 45px;
+  }
 
-    <div class="service-grid">
-      <article class="service-card">
-        <span>01</span>
-        <div class="service-icon">📖</div>
-        <h3>Business Websites</h3>
-        <p>Professional sites for companies, startups, agencies and local services ready to make a sharper first impression.</p>
-        <a href="#contact">Build my business website <i>→</i></a>
-      </article>
+  .card-dev {
+    left: 4px;
+    bottom: 32px;
+  }
 
-      <article class="service-card">
-        <span>02</span>
-        <div class="service-icon">📈</div>
-        <h3>Landing Pages</h3>
-        <p>Focused, high-converting pages for launches, services, personal brands and lead generation campaigns.</p>
-        <a href="#contact">Create my landing page <i>→</i></a>
-      </article>
+  .card-responsive {
+    right: 0;
+    top: 0;
+  }
 
-      <article class="service-card">
-        <span>03</span>
-        <div class="service-icon">🛒</div>
-        <h3>E-commerce</h3>
-        <p>Modern online stores with intuitive browsing, product pages and mobile-first checkout experiences.</p>
-        <a href="#contact">Build my store <i>→</i></a>
-      </article>
+  .card-performance {
+    right: 3px;
+    bottom: -2px;
+  }
 
-      <article class="service-card">
-        <span>04</span>
-        <div class="service-icon">✦</div>
-        <h3>Portfolio Websites</h3>
-        <p>Distinctive portfolios that let your work speak clearly to the people you want to reach.</p>
-        <a href="#contact">Build my portfolio <i>→</i></a>
-      </article>
+  .orbit {
+    width: 330px;
+    height: 330px;
+    right: 4%;
+    top: 10px;
+  }
 
-      <article class="service-card">
-        <span>05</span>
-        <div class="service-icon">🔄</div>
-        <h3>Website Redesign</h3>
-        <p>Transform an outdated site into a modern digital experience that earns trust on every screen.</p>
-        <a href="#contact">Redesign my website <i>→</i></a>
-      </article>
+  .orbit-two {
+    width: 270px;
+    height: 270px;
+    right: 13%;
+    top: 40px;
+  }
 
-      <article class="service-card">
-        <span>06</span>
-        <div class="service-icon">⚙️</div>
-        <h3>Custom Websites</h3>
-        <p>For ideas that need more: booking systems, dashboards, business platforms and custom web apps.</p>
-        <a href="#contact">Discuss my idea <i>→</i></a>
-      </article>
-    </div>
-  </section>
+  .section {
+    width: 100%;
+    padding: 85px 24px;
+  }
 
-  <a href="https://wa.me/" class="whatsapp" target="_blank">💬 Chat on WhatsApp</a>
+  .service-grid,
+  .project-grid,
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
 
-</body>
-</html>
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    padding: 35px 24px 75px;
+  }
+}
