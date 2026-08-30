@@ -1,0 +1,151 @@
+@media (max-width: 700px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    width: calc(100% - 24px);
+    min-height: 52px;
+    top: 10px;
+    padding: 10px 12px;
+  }
+
+  .site-header nav {
+    display: none !important;
+  }
+
+  .site-header.menu-open nav {
+    display: flex !important;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    right: 0;
+    padding: 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .site-header nav a {
+    font-size: 0.85rem;
+    padding: 4px 0;
+  }
+
+  .theme-toggle {
+    display: block;
+    font-size: 1.25rem;
+    padding: 8px;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    width: 34px;
+    min-height: 34px;
+    padding: 6px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 2px;
+    margin: 6px 0;
+    background: currentColor;
+  }
+
+  .hero {
+    width: 100%;
+    min-width: 0;
+    padding: 132px 20px 35px;
+    display: block;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.3rem, 12vw, 3.2rem);
+    line-height: 1;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 390px;
+    height: 340px;
+    margin: 30px auto 0;
+    transform: none;
+  }
+
+  .screen {
+    width: min(78vw, 320px);
+    height: 210px;
+    right: 8%;
+    top: 60px;
+  }
+
+  .phone {
+    width: 78px;
+    height: 165px;
+    right: 0;
+    bottom: 6px;
+  }
+
+  .card-design {
+    left: 0;
+    top: 45px;
+  }
+
+  .card-dev {
+    left: 4px;
+    bottom: 32px;
+  }
+
+  .card-responsive {
+    right: 0;
+    top: 0;
+  }
+
+  .card-performance {
+    right: 3px;
+    bottom: -2px;
+  }
+
+  .orbit {
+    width: 330px;
+    height: 330px;
+    right: 4%;
+    top: 10px;
+  }
+
+  .orbit-two {
+    width: 270px;
+    height: 270px;
+    right: 13%;
+    top: 40px;
+  }
+
+  .section {
+    width: 100%;
+    padding: 85px 24px;
+  }
+
+  .service-grid,
+  .project-grid,
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    padding: 35px 24px 75px;
+  }
+}
