@@ -3,35 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="UF Developer creates modern, responsive and business-focused websites.">
-  <meta name="theme-color" content="#0b0d0f">
-
-  <title>UF Developer | Modern Websites for Growing Businesses</title>
-
+  <meta name="description" content="UF Developer creates modern websites for growing businesses.">
+  <title>UF Developer | Modern Websites</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
   <div class="loader">
-    <span>UF</span>
+    <strong>UF</strong>
     <small>DEVELOPER</small>
   </div>
 
   <header class="site-header">
-    <a class="brand" href="#home">
+    <a class="brand" href="index.html">
       <b>UF</b>
       <span>DEVELOPER</span>
     </a>
 
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="work.html">Work</a>
       <a href="process.html">Process</a>
@@ -41,25 +34,21 @@
 
     <div class="nav-actions">
       <button class="theme-toggle" type="button">☼</button>
-      <a class="button button-small" href="#contact">Let’s Talk ↗</a>
-
-      <button class="menu-toggle" type="button">
-        <span></span>
-        <span></span>
+      <a class="button button-small" href="#contact">Let's Talk ↗</a>
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span><span></span>
       </button>
     </div>
   </header>
 
   <main>
-
-    <section id="home" class="hero">
+    <section class="hero" id="home">
       <div class="grid"></div>
       <div class="hero-glow"></div>
 
       <div class="hero-copy reveal">
         <p class="availability">
-          <span></span>
-          Available for new projects
+          <span></span> Available for new projects
         </p>
 
         <h1>
@@ -68,30 +57,21 @@
         </h1>
 
         <p class="lead">
-          Modern, responsive and conversion-focused websites for
-          businesses, brands and entrepreneurs.
+          Modern, responsive and conversion-focused websites for businesses,
+          brands and entrepreneurs.
         </p>
 
         <p class="location">
-          Based in Pakistan <b>•</b>
-          Working with ambitious businesses
+          Based in Pakistan • Working with ambitious businesses
         </p>
 
         <div class="hero-actions">
-          <a class="button" href="#contact">
-            Start a Project →
-          </a>
-
-          <a class="text-link" href="#work">
-            View My Work ↓
-          </a>
+          <a class="button" href="#contact">Start a Project →</a>
+          <a class="text-link" href="#work">View My Work ↓</a>
         </div>
 
         <p class="capabilities">
-          Responsive <b>•</b>
-          Modern <b>•</b>
-          Fast <b>•</b>
-          Built for growth
+          Responsive • Modern • Fast • Built for growth
         </p>
       </div>
 
@@ -101,49 +81,31 @@
 
         <div class="screen">
           <div class="browser-top">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
             <i>ufdeveloper.dev</i>
           </div>
 
           <div class="screen-content">
             <div class="screen-nav">
               <b>atelier</b>
-              <span>Work&nbsp;&nbsp; Services&nbsp;&nbsp; Contact</span>
+              <span>Work &nbsp; Services &nbsp; Contact</span>
             </div>
 
             <h3>
               Built for the<br>
               <em>next chapter.</em>
             </h3>
-
-            <div class="screen-block"></div>
-
-            <div class="screen-lines">
-              <i></i>
-              <i></i>
-            </div>
           </div>
-        </div>
-
-        <div class="phone">
-          <div class="phone-top"></div>
-          <b>ATELIER</b>
-          <strong>Future, made <em>real.</em></strong>
-          <div></div>
         </div>
 
         <div class="float-card card-design">
           <small>01</small>
-          <b>Design</b>
-          <i>✦</i>
+          <b>Design ✦</b>
         </div>
 
         <div class="float-card card-dev">
           <small>02</small>
-          <b>Development</b>
-          <i>⌘</i>
+          <b>Development ⌘</b>
         </div>
 
         <div class="float-card card-responsive">
@@ -160,7 +122,6 @@
 
     <section class="trust">
       <p>Built for businesses that want to be taken seriously online.</p>
-
       <div>
         <span>Responsive Design</span>
         <span>Modern UI</span>
@@ -170,32 +131,25 @@
       </div>
     </section>
 
-    <section id="services" class="section services">
+    <section class="section services" id="services">
       <div class="section-heading reveal">
         <p class="eyebrow">Services / 01</p>
-
-        <h2>
-          What I can build
-          <em>for you.</em>
-        </h2>
-
+        <h2>What I can build <em>for you.</em></h2>
         <p>
-          From a simple business website to a complete online store,
-          I create digital experiences designed around your goals.
+          Digital experiences designed around your goals and your customers.
         </p>
       </div>
 
       <div class="service-grid">
-
         <article class="service-card reveal">
           <span>01</span>
           <div class="service-icon">◫</div>
           <h3>Business Websites</h3>
           <p>
-            Professional websites for companies, startups,
-            agencies and local services.
+            Professional websites for companies, startups, agencies and local
+            services.
           </p>
-          <a href="contact.html">Build my website →</a>
+          <a href="services.html">Learn more →</a>
         </article>
 
         <article class="service-card reveal">
@@ -203,10 +157,9 @@
           <div class="service-icon">↗</div>
           <h3>Landing Pages</h3>
           <p>
-            Focused landing pages for campaigns, products,
-            services and lead generation.
+            Focused landing pages for launches, campaigns and lead generation.
           </p>
-          <a href="contact.html">Create my landing page →</a>
+          <a href="services.html">Learn more →</a>
         </article>
 
         <article class="service-card reveal">
@@ -214,10 +167,9 @@
           <div class="service-icon">▢</div>
           <h3>E-commerce</h3>
           <p>
-            Modern online stores with product pages,
-            categories and checkout experiences.
+            Mobile-first online stores with simple browsing and checkout.
           </p>
-          <a href="contact.html">Build my store →</a>
+          <a href="services.html">Learn more →</a>
         </article>
 
         <article class="service-card reveal">
@@ -225,10 +177,9 @@
           <div class="service-icon">✦</div>
           <h3>Portfolio Websites</h3>
           <p>
-            Professional portfolios for creators,
-            designers, developers and professionals.
+            Distinctive portfolios that present your work professionally.
           </p>
-          <a href="contact.html">Build my portfolio →</a>
+          <a href="services.html">Learn more →</a>
         </article>
 
         <article class="service-card reveal">
@@ -236,10 +187,9 @@
           <div class="service-icon">↻</div>
           <h3>Website Redesign</h3>
           <p>
-            Transform an outdated website into a modern
-            digital experience.
+            Transform an outdated website into a modern digital experience.
           </p>
-          <a href="contact.html">Redesign my website →</a>
+          <a href="services.html">Learn more →</a>
         </article>
 
         <article class="service-card reveal">
@@ -247,323 +197,178 @@
           <div class="service-icon">⌘</div>
           <h3>Custom Websites</h3>
           <p>
-            Booking systems, dashboards, platforms and
-            custom web applications.
+            Booking systems, dashboards, business platforms and web apps.
           </p>
-          <a href="contact.html">Discuss my idea →</a>
+          <a href="services.html">Learn more →</a>
         </article>
-
       </div>
     </section>
 
-    <section id="work" class="section work">
+    <section class="section work" id="work">
       <div class="section-heading reveal">
         <p class="eyebrow">Selected work / 02</p>
-
-        <h2>
-          Designed to be
-          <em>remembered.</em>
-        </h2>
-
-        <p>
-          Concept projects designed and developed by UF Developer.
-        </p>
-      </div>
-
-      <div class="filters">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="business">Business</button>
-        <button data-filter="ecommerce">E-commerce</button>
-        <button data-filter="food">Food</button>
-        <button data-filter="realestate">Real Estate</button>
-        <button data-filter="personal">Personal Brand</button>
+        <h2>Designed to be <em>remembered.</em></h2>
+        <p>Creative website concepts for ambitious businesses.</p>
       </div>
 
       <div class="project-grid">
-
-        <article class="project project-bake reveal" data-category="food ecommerce">
+        <article class="project project-bake reveal">
           <div class="project-preview bakery">
-            <div class="preview-top">
-              BAKE HOUSE
-              <span>Menu&nbsp;&nbsp; Order</span>
-            </div>
-
-            <strong>
-              Made with<br>
-              <em>sweetness.</em>
-            </strong>
-
-            <div class="cake">✿</div>
+            <strong>Made with<br><em>sweetness.</em></strong>
           </div>
-
           <div class="project-info">
             <div>
-              <p>Concept Project · Bakery / Food</p>
+              <p>Food / Bakery</p>
               <h3>Bake House Karachi</h3>
             </div>
-
-            <button class="project-open" data-project="Bake House Karachi">
-              View concept ↗
-            </button>
+            <a href="work.html">View project ↗</a>
           </div>
         </article>
 
-        <article class="project project-estate reveal" data-category="realestate business">
+        <article class="project project-estate reveal">
           <div class="project-preview estate">
-            <div class="estate-nav">
-              ESTATEX
-              <span>Properties&nbsp;&nbsp; Services</span>
-            </div>
-
-            <strong>
-              Find a place<br>
-              that feels like <em>home.</em>
-            </strong>
-
-            <div class="building"></div>
+            <strong>Find a place<br>that feels like <em>home.</em></strong>
           </div>
-
           <div class="project-info">
             <div>
-              <p>Concept Project · Real Estate</p>
+              <p>Real Estate</p>
               <h3>EstateX Pakistan</h3>
             </div>
-
-            <button class="project-open" data-project="EstateX Pakistan">
-              View concept ↗
-            </button>
+            <a href="work.html">View project ↗</a>
           </div>
         </article>
 
-        <article class="project project-cafe reveal" data-category="food business">
+        <article class="project project-cafe reveal">
           <div class="project-preview cafe">
-            <p>CAFÉ 92</p>
-
-            <strong>
-              Slow mornings.<br>
-              <em>Good coffee.</em>
-            </strong>
-
-            <small>EST. 2024 — KARACHI</small>
-
-            <div class="coffee">◉</div>
+            <strong>Slow mornings.<br><em>Good coffee.</em></strong>
           </div>
-
           <div class="project-info">
             <div>
-              <p>Concept Project · Restaurant</p>
+              <p>Restaurant</p>
               <h3>Café 92</h3>
             </div>
-
-            <button class="project-open" data-project="Café 92">
-              View concept ↗
-            </button>
+            <a href="work.html">View project ↗</a>
           </div>
         </article>
-
-        <article class="project project-aura reveal" data-category="ecommerce">
-          <div class="project-preview aura">
-            <div>
-              AURA
-              <span>Cart (0)</span>
-            </div>
-
-            <strong>
-              Quietly<br>
-              <em>confident.</em>
-            </strong>
-
-            <div class="model"></div>
-          </div>
-
-          <div class="project-info">
-            <div>
-              <p>Concept Project · Fashion / E-commerce</p>
-              <h3>AURA</h3>
-            </div>
-
-            <button class="project-open" data-project="AURA">
-              View concept ↗
-            </button>
-          </div>
-        </article>
-
       </div>
+
+      <a class="button" href="work.html">View all work →</a>
     </section>
 
-    <section id="process" class="section process">
+    <section class="section process" id="process">
       <div class="section-heading reveal">
         <p class="eyebrow">Process / 03</p>
-
-        <h2>
-          From idea to a website
-          you’re proud to <em>share.</em>
-        </h2>
+        <h2>From idea to a website<br>you’re proud to <em>share.</em></h2>
       </div>
 
       <div class="timeline">
-        <div class="timeline-line"></div>
-
-        <article class="active reveal">
+        <article class="reveal">
           <span>01</span>
-          <div>
-            <h3>Discovery</h3>
-            <p>We understand your business, audience and goals.</p>
-          </div>
+          <h3>Discovery</h3>
+          <p>We understand your business, audience and goals.</p>
         </article>
 
         <article class="reveal">
           <span>02</span>
-          <div>
-            <h3>Planning</h3>
-            <p>We define the pages, structure and functionality.</p>
-          </div>
+          <h3>Planning</h3>
+          <p>We define the pages, structure and functionality.</p>
         </article>
 
         <article class="reveal">
           <span>03</span>
-          <div>
-            <h3>Design</h3>
-            <p>We create the visual direction and user experience.</p>
-          </div>
+          <h3>Design</h3>
+          <p>We create the visual direction and user experience.</p>
         </article>
 
         <article class="reveal">
           <span>04</span>
-          <div>
-            <h3>Development</h3>
-            <p>Your website is built responsively and tested.</p>
-          </div>
+          <h3>Development</h3>
+          <p>Your website is built responsively and tested.</p>
         </article>
 
         <article class="reveal">
           <span>05</span>
-          <div>
-            <h3>Launch</h3>
-            <p>Your website is prepared for deployment and handover.</p>
-          </div>
+          <h3>Launch</h3>
+          <p>Your website is prepared for a confident launch.</p>
         </article>
       </div>
     </section>
 
     <section class="big-cta">
       <p class="eyebrow">Ready when you are</p>
-
-      <h2>
-        Your business deserves<br>
-        a <em>better website.</em>
-      </h2>
-
-      <p>
-        Let’s create something modern, professional and built around your goals.
-      </p>
+      <h2>Your business deserves<br>a <em>better website.</em></h2>
+      <p>Let’s create something modern, professional and built around your goals.</p>
 
       <div>
-        <a class="button" href="#contact">
-          Start my project →
-        </a>
-
-        <a
-          class="button button-outline"
-          href="https://wa.me/923402320338"
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="button" href="#contact">Start my project →</a>
+        <a class="button button-outline"
+           href="https://wa.me/923402320338"
+           target="_blank"
+           rel="noopener">
           WhatsApp UF Developer
         </a>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
+    <section class="section contact" id="contact">
       <div class="contact-intro reveal">
         <p class="eyebrow">Start a project / 04</p>
-
-        <h2>
-          Let’s talk about<br>
-          your <em>project.</em>
-        </h2>
-
-        <p>
-          No complicated process. Tell me what you need,
-          and we’ll start from there.
-        </p>
+        <h2>Let’s talk about<br>your <em>project.</em></h2>
+        <p>No complicated process. Tell me what you need.</p>
 
         <div class="contact-meta">
           <a href="mailto:umerfarooq3573@gmail.com">
-            ✉ &nbsp;umerfarooq3573@gmail.com
+            ✉ umerfarooq3573@gmail.com
           </a>
 
-          <a href="https://wa.me/923402320338">
-            ◉ &nbsp;+92 340 2320338
+          <a href="https://wa.me/923402320338" target="_blank">
+            ◉ +92 340 2320338
           </a>
 
-          <span>⌖ &nbsp;Pakistan · Remote projects</span>
+          <span>⌖ Pakistan · Remote projects</span>
         </div>
       </div>
 
       <form class="project-form reveal" id="project-form">
-        <div class="form-row">
-          <label>
-            Name
-            <input required name="name" placeholder="Enter your name">
-          </label>
+        <label>
+          Name
+          <input name="name" required placeholder="Enter your name">
+        </label>
 
-          <label>
-            Business / Brand
-            <input name="brand" placeholder="Business name">
-          </label>
-        </div>
-
-        <div class="form-row">
-          <label>
-            Email
-            <input type="email" required name="email" placeholder="Email address">
-          </label>
-
-          <label>
-            WhatsApp / Phone
-            <input name="phone" placeholder="Phone number">
-          </label>
-        </div>
+        <label>
+          Email
+          <input type="email" name="email" required placeholder="Email address">
+        </label>
 
         <label>
           What do you need?
-
           <select name="service">
             <option>Business Website</option>
             <option>Landing Page</option>
             <option>E-commerce</option>
             <option>Portfolio Website</option>
-            <option>Restaurant Website</option>
-            <option>Real Estate Website</option>
             <option>Website Redesign</option>
             <option>Custom Web App</option>
-            <option>Other</option>
           </select>
         </label>
 
         <label>
           Project description
-
-          <textarea
-            required
-            name="description"
-            placeholder="Tell me about your project..."
-          ></textarea>
+          <textarea name="description" required
+            placeholder="Tell me about your project"></textarea>
         </label>
 
         <button class="button" type="submit">
           Send project request →
         </button>
 
-        <p class="form-message" role="status"></p>
+        <p class="form-message"></p>
       </form>
     </section>
-
   </main>
 
   <footer>
-    <a class="brand" href="#home">
+    <a class="brand" href="index.html">
       <b>UF</b>
       <span>DEVELOPER</span>
     </a>
@@ -573,69 +378,19 @@
     <div class="footer-links">
       <a href="services.html">Services</a>
       <a href="work.html">Work</a>
-      <a href="process.html">Process</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
 
-    <small>
-      © 2026 UF Developer. Pakistan-based, remote-friendly.
-    </small>
+    <small>© 2026 UF Developer. Pakistan-based, remote-friendly.</small>
   </footer>
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/923402320338"
-    target="_blank"
-    rel="noopener"
-  >
-    ⌕ <span>Chat on WhatsApp</span>
+  <a class="whatsapp"
+     href="https://wa.me/923402320338"
+     target="_blank"
+     rel="noopener">
+    Chat on WhatsApp
   </a>
-
-  <a class="mobile-cta" href="#contact">
-    💬 &nbsp;Start your project
-  </a>
-
-  <dialog id="case-study">
-    <button class="modal-close">×</button>
-    <p class="eyebrow">Concept project</p>
-    <h2></h2>
-    <p class="modal-category"></p>
-
-    <div class="modal-grid">
-      <div>
-        <h3>The challenge</h3>
-        <p>
-          Create a clear and credible online experience for a growing business.
-        </p>
-      </div>
-
-      <div>
-        <h3>The solution</h3>
-        <p>
-          A responsive visual system with clear navigation and strong calls to action.
-        </p>
-      </div>
-
-      <div>
-        <h3>Key features</h3>
-        <p>
-          Mobile-first layouts, intuitive navigation and accessible interfaces.
-        </p>
-      </div>
-
-      <div>
-        <h3>Outcome</h3>
-        <p>
-          Designed as a demonstration of UF Developer’s capabilities.
-        </p>
-      </div>
-    </div>
-
-    <a class="button" href="#contact">
-      Discuss a similar project →
-    </a>
-  </dialog>
 
   <script src="script.js"></script>
 </body>
